@@ -76,7 +76,7 @@ export const useCheckoutController = () => {
   useEffect(() => {
     if (!eventId) { setEvent(null); return; }
     eventService
-      .getById(Number(eventId))
+      .getById(eventId)
       .then(setEvent)
       .catch(() => setEvent(null));
   }, [eventId]);

@@ -10,7 +10,7 @@ export const useEventDetailController = (id?: string) => {
     if (!id) { setEvent(null); return; }
     setLoading(true);
     eventService
-      .getById(Number(id))
+      .getById(id)
       .then(setEvent)
       .catch(() => setEvent(null))
       .finally(() => setLoading(false));

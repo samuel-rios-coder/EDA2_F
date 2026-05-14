@@ -12,7 +12,7 @@ export interface EventTicketTier {
 }
 
 export interface EventModel {
-  id: number;
+  id: string | number;
   slug: string;
   artist: string;
   title: string;
@@ -30,7 +30,7 @@ export interface EventModel {
 }
 
 export interface Artist {
-  id: number;
+  id: string | number;
   name: string;
   bio: string | null;
   imageUrl: string | null;
@@ -38,7 +38,7 @@ export interface Artist {
 }
 
 export interface Venue {
-  id: number;
+  id: string | number;
   name: string;
   address: string;
   city: string;
@@ -47,8 +47,8 @@ export interface Venue {
 }
 
 export interface TicketType {
-  id: number;
-  concertId: number;
+  id: string | number;
+  concertId: string | number;
   name: string;
   description: string | null;
   price: number;
@@ -58,8 +58,8 @@ export interface TicketType {
 }
 
 export interface Concert {
-  id: number;
-  artistId: number;
+  id: string | number;
+  artistId: string | number;
   tourName: string;
   description: string | null;
   date: string;

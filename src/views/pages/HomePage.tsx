@@ -5,7 +5,7 @@ import { useHomeController } from '../../controllers/useHomeController';
 import type { Genre } from '../../models/event.model';
 
 function HomePage() {
-  const { featured, genres, activeGenre, setActiveGenre, events, loading, preferredGenres, preferredEvents } =
+  const { featured, genres, activeGenre, setActiveGenre, events, loading, preferredGenres, preferredEvents, artists } =
     useHomeController();
 
   if (loading) {
@@ -50,6 +50,34 @@ function HomePage() {
         </section>
       )}
 
+      {artists.length > 0 && (
+        <section className="section-card">
+          <div className="section-head">
+            <h2 className="section-title">Artistas disponibles</h2>
+            <span className="ghost-link">{artists.length} artistas</span>
+          </div>
+
+          <div className="card-grid">
+            {artists.map((artist) => (
+              <article key={artist.id} className="event-card">
+                <div className="event-thumb" style={{ backgroundImage: `url(${artist.imageUrl ?? ''})` }} />
+                <div className="event-body">
+                  <h3 className="event-title">{artist.name}</h3>
+                  <p className="muted">{artist.concertsCount} conciertos en cartelera</p>
+                  <div className="chip-row">
+                    {artist.genres.slice(0, 3).map((genre) => (
+                      <span key={`${artist.id}-${genre}`} className="chip active">
+                        {genre}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="section-card">
         <div className="section-head">
           <h2 className="section-title">Eventos Populares</h2>
@@ -58,11 +86,15 @@ function HomePage() {
 
         <FilterChips genres={genres} active={activeGenre} onSelect={setActiveGenre} />
 
-        <div className="card-grid">
-          {events.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
-        </div>
+        {events.length === 0 ? (
+          <p className="muted">No hay conciertos para este filtro.</p>
+        ) : (
+          <div className="card-grid">
+            {events.map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

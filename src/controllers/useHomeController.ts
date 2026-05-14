@@ -1,12 +1,18 @@
 import { useEffect, useMemo, useState } from 'react';
-import { CONCERT_GENRES, type Concert, type Genre } from '../models/event.model';
+import type { Concert, Genre } from '../models/event.model';
 import { authService } from '../services/auth.service';
 import { eventService } from '../services/event.service';
 import { preferencesService } from '../services/preferences.service';
 
-export type HomeGenre = 'All' | Genre;
+export type HomeGenre = 'All' | string;
 
-const genres: HomeGenre[] = ['All', ...CONCERT_GENRES];
+interface ArtistSummary {
+  id: string;
+  name: string;
+  imageUrl: string | null;
+  genres: string[];
+  concertsCount: number;
+}
 
 export const useHomeController = () => {
   const [activeGenre, setActiveGenre] = useState<HomeGenre>('All');
@@ -21,6 +27,17 @@ export const useHomeController = () => {
       .catch(() => setConcerts([]))
       .finally(() => setLoading(false));
   }, []);
+
+  const genres = useMemo<HomeGenre[]>(() => {
+    const uniqueGenres = Array.from(new Set(concerts.flatMap((concert) => concert.genres))).filter(Boolean);
+    return ['All', ...uniqueGenres];
+  }, [concerts]);
+
+  useEffect(() => {
+    if (activeGenre === 'All') return;
+    if (genres.includes(activeGenre)) return;
+    setActiveGenre('All');
+  }, [activeGenre, genres]);
 
   const featured = useMemo(() => concerts.find((c) => c.isFeatured) ?? concerts[0] ?? null, [concerts]);
 
@@ -45,6 +62,34 @@ export const useHomeController = () => {
     return concerts.filter((c) => c.genres.some((g) => preferredGenres.includes(g as Genre)));
   }, [concerts, preferredGenres]);
 
+  const artists = useMemo<ArtistSummary[]>(() => {
+    const byArtist = new Map<string, ArtistSummary>();
+
+    concerts.forEach((concert) => {
+      const key = String(concert.artist?.id ?? concert.artist?.name ?? concert.id);
+      const existing = byArtist.get(key);
+
+      if (!existing) {
+        byArtist.set(key, {
+          id: key,
+          name: concert.artist?.name ?? 'Artista por confirmar',
+          imageUrl: concert.artist?.imageUrl ?? concert.imageUrl ?? null,
+          genres: [...concert.genres],
+          concertsCount: 1,
+        });
+        return;
+      }
+
+      existing.concertsCount += 1;
+      existing.genres = Array.from(new Set([...existing.genres, ...concert.genres]));
+      if (!existing.imageUrl && concert.imageUrl) {
+        existing.imageUrl = concert.imageUrl;
+      }
+    });
+
+    return Array.from(byArtist.values()).sort((a, b) => b.concertsCount - a.concertsCount);
+  }, [concerts]);
+
   return {
     genres,
     activeGenre,
@@ -54,5 +99,6 @@ export const useHomeController = () => {
     loading,
     preferredGenres,
     preferredEvents,
+    artists,
   };
 };

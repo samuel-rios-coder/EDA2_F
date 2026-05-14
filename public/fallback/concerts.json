@@ -1,0 +1,622 @@
+﻿[
+    {
+        "_id":  "6a051f29dc7506bff722e9f3",
+        "artistId":  {
+                         "_id":  "6a051f29dc7506bff722e9e6",
+                         "name":  "J Balvin",
+                         "bio":  "José Álvaro Osorio Balvín, pionero del reggaeton urbano colombiano con proyección mundial.",
+                         "genres":  [
+                                        "Reggaeton",
+                                        "Pop",
+                                        "Urbano",
+                                        "Trap"
+                                    ],
+                         "__v":  0
+                     },
+        "tourName":  "Rayo Tour Colombia 2026",
+        "description":  "J Balvin regresa a Colombia con su explosivo Rayo Tour 2026. Una noche de reggaeton, música urbana y producción única. El show más esperado del año en el Estadio El Campín.",
+        "date":  "2026-06-29T06:00:00.000Z",
+        "doorsOpenAt":  "2026-06-29T04:00:00.000Z",
+        "endDate":  "2026-06-29T09:30:00.000Z",
+        "venueId":  {
+                        "_id":  "6a051f28dc7506bff722e9cd",
+                        "name":  "Estadio El Campín",
+                        "address":  "Cra 30 # 57-60",
+                        "city":  "Bogotá",
+                        "country":  "Colombia",
+                        "sections":  [
+                                         {
+                                             "name":  "Palco Premium",
+                                             "capacity":  300,
+                                             "description":  "Zona exclusiva con mejor vista al escenario",
+                                             "color":  "#8B5CF6",
+                                             "_id":  "6a051f28dc7506bff722e9bf"
+                                         },
+                                         {
+                                             "name":  "VIP Floor",
+                                             "capacity":  1500,
+                                             "description":  "Zona VIP de pie frente al escenario",
+                                             "color":  "#3B82F6",
+                                             "_id":  "6a051f28dc7506bff722e9c0"
+                                         },
+                                         {
+                                             "name":  "General Piso",
+                                             "capacity":  8000,
+                                             "description":  "Zona general en el campo",
+                                             "color":  "#10B981",
+                                             "_id":  "6a051f28dc7506bff722e9c1"
+                                         },
+                                         {
+                                             "name":  "General Lateral",
+                                             "capacity":  6000,
+                                             "description":  "Tribunas laterales numeradas",
+                                             "color":  "#10B981",
+                                             "_id":  "6a051f28dc7506bff722e9c2"
+                                         }
+                                     ],
+                        "__v":  0
+                    },
+        "status":  "PUBLISHED",
+        "isFeatured":  true,
+        "genres":  [
+                       "Reggaeton",
+                       "Pop",
+                       "Urbano",
+                       "Trap"
+                   ],
+        "viewerCount":  847,
+        "createdAt":  "2026-05-13T22:48:42.733Z",
+        "updatedAt":  "2026-05-13T22:48:42.733Z",
+        "__v":  0,
+        "ticketTypes":  [
+                            {
+                                "_id":  "6a051f29dc7506bff722ea02",
+                                "concertId":  "6a051f29dc7506bff722e9f3",
+                                "sectionId":  "6a051f28dc7506bff722e9c1",
+                                "name":  "General",
+                                "description":  "Zona general en el campo. Acceso estándar.",
+                                "price":  220000,
+                                "totalQuantity":  500,
+                                "availableQuantity":  498,
+                                "maxPerOrder":  8,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "General Piso",
+                                                "capacity":  8000,
+                                                "description":  "Zona general en el campo",
+                                                "color":  "#10B981",
+                                                "_id":  "6a051f28dc7506bff722e9c1"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea03",
+                                "concertId":  "6a051f29dc7506bff722e9f3",
+                                "sectionId":  "6a051f28dc7506bff722e9c0",
+                                "name":  "VIP Floor",
+                                "description":  "Zona VIP de pie frente al escenario con acceso preferencial.",
+                                "price":  480000,
+                                "totalQuantity":  150,
+                                "availableQuantity":  30,
+                                "maxPerOrder":  4,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "VIP Floor",
+                                                "capacity":  1500,
+                                                "description":  "Zona VIP de pie frente al escenario",
+                                                "color":  "#3B82F6",
+                                                "_id":  "6a051f28dc7506bff722e9c0"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea04",
+                                "concertId":  "6a051f29dc7506bff722e9f3",
+                                "sectionId":  "6a051f28dc7506bff722e9bf",
+                                "name":  "Palco Premium",
+                                "description":  "Zona exclusiva con mejor vista. Incluye lounge privado y servicio personalizado.",
+                                "price":  950000,
+                                "totalQuantity":  50,
+                                "availableQuantity":  3,
+                                "maxPerOrder":  2,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "Palco Premium",
+                                                "capacity":  300,
+                                                "description":  "Zona exclusiva con mejor vista al escenario",
+                                                "color":  "#8B5CF6",
+                                                "_id":  "6a051f28dc7506bff722e9bf"
+                                            }
+                            }
+                        ],
+        "reviews":  [
+                        {
+                            "_id":  "6a051f2ddc7506bff72313be",
+                            "concertId":  "6a051f29dc7506bff722e9f3",
+                            "rating":  5,
+                            "comment":  "J Balvin no defrauda. El show fue espectacular, cada detalle cuidado al máximo.",
+                            "createdAt":  "2026-05-13T22:48:57.203Z",
+                            "__v":  0,
+                            "updatedAt":  "2026-05-14T01:02:37.386Z",
+                            "user":  {
+                                         "_id":  "6a051f26dc7506bff722e9b6",
+                                         "firstName":  "María",
+                                         "lastName":  "González"
+                                     }
+                        }
+                    ]
+    },
+    {
+        "_id":  "6a051f29dc7506bff722e9f4",
+        "artistId":  {
+                         "_id":  "6a051f29dc7506bff722e9e9",
+                         "name":  "Karol G",
+                         "bio":  "Carolina Giraldo Navarro, \"La Bichota\", reina global del reggaeton y el trap latino.",
+                         "genres":  [
+                                        "Reggaeton",
+                                        "Trap",
+                                        "Pop"
+                                    ],
+                         "__v":  0
+                     },
+        "tourName":  "Mañana Será Bonito Tour",
+        "description":  "La Bichota llega a Bogotá con el show más esperado del año. Un espectáculo visual y musical de talla mundial.",
+        "date":  "2026-07-23T06:00:00.000Z",
+        "doorsOpenAt":  "2026-07-23T04:00:00.000Z",
+        "endDate":  "2026-07-23T09:45:00.000Z",
+        "venueId":  {
+                        "_id":  "6a051f28dc7506bff722e9ce",
+                        "name":  "Movistar Arena",
+                        "address":  "Cra 24 # 6-00",
+                        "city":  "Bogotá",
+                        "country":  "Colombia",
+                        "sections":  [
+                                         {
+                                             "name":  "Palco Premium",
+                                             "capacity":  200,
+                                             "description":  "Palcos VIP con vista privilegiada",
+                                             "color":  "#8B5CF6",
+                                             "_id":  "6a051f28dc7506bff722e9c3"
+                                         },
+                                         {
+                                             "name":  "VIP Floor",
+                                             "capacity":  800,
+                                             "description":  "Zona VIP frente al escenario",
+                                             "color":  "#3B82F6",
+                                             "_id":  "6a051f28dc7506bff722e9c4"
+                                         },
+                                         {
+                                             "name":  "General",
+                                             "capacity":  5000,
+                                             "description":  "Zona general con numeración",
+                                             "color":  "#10B981",
+                                             "_id":  "6a051f28dc7506bff722e9c5"
+                                         }
+                                     ],
+                        "__v":  0
+                    },
+        "status":  "PUBLISHED",
+        "isFeatured":  false,
+        "genres":  [
+                       "Reggaeton",
+                       "Trap",
+                       "Pop"
+                   ],
+        "viewerCount":  312,
+        "createdAt":  "2026-05-13T22:48:46.402Z",
+        "updatedAt":  "2026-05-13T22:48:46.402Z",
+        "__v":  0,
+        "ticketTypes":  [
+                            {
+                                "_id":  "6a051f29dc7506bff722ea05",
+                                "concertId":  "6a051f29dc7506bff722e9f4",
+                                "sectionId":  "6a051f28dc7506bff722e9c5",
+                                "name":  "General",
+                                "price":  280000,
+                                "totalQuantity":  600,
+                                "availableQuantity":  600,
+                                "maxPerOrder":  8,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "General",
+                                                "capacity":  5000,
+                                                "description":  "Zona general con numeración",
+                                                "color":  "#10B981",
+                                                "_id":  "6a051f28dc7506bff722e9c5"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea06",
+                                "concertId":  "6a051f29dc7506bff722e9f4",
+                                "sectionId":  "6a051f28dc7506bff722e9c4",
+                                "name":  "VIP Floor",
+                                "price":  520000,
+                                "totalQuantity":  200,
+                                "availableQuantity":  199,
+                                "maxPerOrder":  4,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "VIP Floor",
+                                                "capacity":  800,
+                                                "description":  "Zona VIP frente al escenario",
+                                                "color":  "#3B82F6",
+                                                "_id":  "6a051f28dc7506bff722e9c4"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea07",
+                                "concertId":  "6a051f29dc7506bff722e9f4",
+                                "sectionId":  "6a051f28dc7506bff722e9c3",
+                                "name":  "Palco Premium",
+                                "price":  890000,
+                                "totalQuantity":  60,
+                                "availableQuantity":  60,
+                                "maxPerOrder":  2,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "Palco Premium",
+                                                "capacity":  200,
+                                                "description":  "Palcos VIP con vista privilegiada",
+                                                "color":  "#8B5CF6",
+                                                "_id":  "6a051f28dc7506bff722e9c3"
+                                            }
+                            }
+                        ],
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "_id":  "6a051f29dc7506bff722e9f5",
+        "artistId":  {
+                         "_id":  "6a051f29dc7506bff722e9e7",
+                         "name":  "Maluma",
+                         "bio":  "Juan Luis Londoño Arias, cantante y compositor colombiano de talla mundial.",
+                         "genres":  [
+                                        "Reggaeton",
+                                        "Pop Urbano",
+                                        "Trap"
+                                    ],
+                         "__v":  0
+                     },
+        "tourName":  "Don Juan Tour",
+        "description":  "Maluma regresa a Colombia con su Don Juan Tour. Una noche de éxitos, bailoteo y el mejor reggaeton colombiano.",
+        "date":  "2026-08-09T07:00:00.000Z",
+        "doorsOpenAt":  "2026-08-09T05:00:00.000Z",
+        "endDate":  "2026-08-09T10:30:00.000Z",
+        "venueId":  {
+                        "_id":  "6a051f28dc7506bff722e9cf",
+                        "name":  "Estadio Atanasio Girardot",
+                        "address":  "Cra 74 # 48-64",
+                        "city":  "Medellín",
+                        "country":  "Colombia",
+                        "sections":  [
+                                         {
+                                             "name":  "Palco Premium",
+                                             "capacity":  200,
+                                             "description":  "Palco VIP con mejor ángulo al escenario",
+                                             "color":  "#8B5CF6",
+                                             "_id":  "6a051f28dc7506bff722e9c6"
+                                         },
+                                         {
+                                             "name":  "Pista",
+                                             "capacity":  3000,
+                                             "description":  "Zona de pie en la pista central",
+                                             "color":  "#3B82F6",
+                                             "_id":  "6a051f28dc7506bff722e9c7"
+                                         },
+                                         {
+                                             "name":  "General",
+                                             "capacity":  5000,
+                                             "description":  "Sillas numeradas con buena vista",
+                                             "color":  "#10B981",
+                                             "_id":  "6a051f28dc7506bff722e9c8"
+                                         }
+                                     ],
+                        "__v":  0
+                    },
+        "status":  "PUBLISHED",
+        "isFeatured":  false,
+        "genres":  [
+                       "Reggaeton",
+                       "Pop Urbano",
+                       "Trap"
+                   ],
+        "viewerCount":  203,
+        "createdAt":  "2026-05-13T22:48:47.953Z",
+        "updatedAt":  "2026-05-13T22:48:47.953Z",
+        "__v":  0,
+        "ticketTypes":  [
+                            {
+                                "_id":  "6a051f29dc7506bff722ea08",
+                                "concertId":  "6a051f29dc7506bff722e9f5",
+                                "sectionId":  "6a051f28dc7506bff722e9c8",
+                                "name":  "General",
+                                "price":  320000,
+                                "totalQuantity":  500,
+                                "availableQuantity":  500,
+                                "maxPerOrder":  8,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "General",
+                                                "capacity":  5000,
+                                                "description":  "Sillas numeradas con buena vista",
+                                                "color":  "#10B981",
+                                                "_id":  "6a051f28dc7506bff722e9c8"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea09",
+                                "concertId":  "6a051f29dc7506bff722e9f5",
+                                "sectionId":  "6a051f28dc7506bff722e9c7",
+                                "name":  "Pista",
+                                "price":  480000,
+                                "totalQuantity":  200,
+                                "availableQuantity":  200,
+                                "maxPerOrder":  4,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "Pista",
+                                                "capacity":  3000,
+                                                "description":  "Zona de pie en la pista central",
+                                                "color":  "#3B82F6",
+                                                "_id":  "6a051f28dc7506bff722e9c7"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea0a",
+                                "concertId":  "6a051f29dc7506bff722e9f5",
+                                "sectionId":  "6a051f28dc7506bff722e9c6",
+                                "name":  "Palco Premium",
+                                "price":  750000,
+                                "totalQuantity":  50,
+                                "availableQuantity":  50,
+                                "maxPerOrder":  2,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "Palco Premium",
+                                                "capacity":  200,
+                                                "description":  "Palco VIP con mejor ángulo al escenario",
+                                                "color":  "#8B5CF6",
+                                                "_id":  "6a051f28dc7506bff722e9c6"
+                                            }
+                            }
+                        ],
+        "reviews":  [
+                        {
+                            "_id":  "6a051f2ddc7506bff72313bf",
+                            "concertId":  "6a051f29dc7506bff722e9f5",
+                            "rating":  4,
+                            "comment":  "Maluma estuvo increíble. El Atanasio lleno y una energía única.",
+                            "createdAt":  "2026-05-13T22:48:57.203Z",
+                            "__v":  0,
+                            "updatedAt":  "2026-05-14T01:02:37.386Z",
+                            "user":  {
+                                         "_id":  "6a051f26dc7506bff722e9b7",
+                                         "firstName":  "Pedro",
+                                         "lastName":  "Ramírez"
+                                     }
+                        }
+                    ]
+    },
+    {
+        "_id":  "6a051f29dc7506bff722e9f6",
+        "artistId":  {
+                         "_id":  "6a051f29dc7506bff722e9eb",
+                         "name":  "Feid",
+                         "bio":  "Salomón Villada Hoyos, artista colombiano conocido como \"El Ferxxo\", fusiona reggaeton con R\u0026B.",
+                         "genres":  [
+                                        "Reggaeton",
+                                        "Urbano",
+                                        "R\u0026B"
+                                    ],
+                         "__v":  0
+                     },
+        "tourName":  "Mar Tour Colombia 2026",
+        "description":  "El Ferxxo desembarca en Medellín con su Mar Tour. Una experiencia musical inmersiva que fusiona reggaeton, R\u0026B y urbano.",
+        "date":  "2026-08-16T06:00:00.000Z",
+        "doorsOpenAt":  "2026-08-16T04:30:00.000Z",
+        "endDate":  "2026-08-16T09:00:00.000Z",
+        "venueId":  {
+                        "_id":  "6a051f28dc7506bff722e9d0",
+                        "name":  "Centro de Eventos",
+                        "address":  "Cra 43 # 18-00",
+                        "city":  "Medellín",
+                        "country":  "Colombia",
+                        "sections":  [
+                                         {
+                                             "name":  "Pista VIP",
+                                             "capacity":  500,
+                                             "description":  "Zona VIP en la pista",
+                                             "color":  "#3B82F6",
+                                             "_id":  "6a051f28dc7506bff722e9c9"
+                                         },
+                                         {
+                                             "name":  "Pista General",
+                                             "capacity":  3000,
+                                             "description":  "Zona de pie general",
+                                             "color":  "#10B981",
+                                             "_id":  "6a051f28dc7506bff722e9ca"
+                                         }
+                                     ],
+                        "__v":  0
+                    },
+        "status":  "PUBLISHED",
+        "isFeatured":  false,
+        "genres":  [
+                       "Reggaeton",
+                       "Urbano",
+                       "R\u0026B"
+                   ],
+        "viewerCount":  156,
+        "createdAt":  "2026-05-13T22:48:49.155Z",
+        "updatedAt":  "2026-05-13T22:48:49.155Z",
+        "__v":  0,
+        "ticketTypes":  [
+                            {
+                                "_id":  "6a051f29dc7506bff722ea0b",
+                                "concertId":  "6a051f29dc7506bff722e9f6",
+                                "sectionId":  "6a051f28dc7506bff722e9ca",
+                                "name":  "Pista",
+                                "price":  200000,
+                                "totalQuantity":  400,
+                                "availableQuantity":  400,
+                                "maxPerOrder":  8,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "Pista General",
+                                                "capacity":  3000,
+                                                "description":  "Zona de pie general",
+                                                "color":  "#10B981",
+                                                "_id":  "6a051f28dc7506bff722e9ca"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea0c",
+                                "concertId":  "6a051f29dc7506bff722e9f6",
+                                "sectionId":  "6a051f28dc7506bff722e9c9",
+                                "name":  "VIP",
+                                "price":  380000,
+                                "totalQuantity":  150,
+                                "availableQuantity":  150,
+                                "maxPerOrder":  4,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "Pista VIP",
+                                                "capacity":  500,
+                                                "description":  "Zona VIP en la pista",
+                                                "color":  "#3B82F6",
+                                                "_id":  "6a051f28dc7506bff722e9c9"
+                                            }
+                            }
+                        ],
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "_id":  "6a051f29dc7506bff722e9f7",
+        "artistId":  {
+                         "_id":  "6a051f29dc7506bff722e9e8",
+                         "name":  "Bad Bunny",
+                         "bio":  "Benito Antonio Martínez, el artista latino más escuchado del mundo, originario de Puerto Rico.",
+                         "genres":  [
+                                        "Reggaeton",
+                                        "Trap",
+                                        "Latin Pop"
+                                    ],
+                         "__v":  0
+                     },
+        "tourName":  "Nadie Sabe Lo Que Va a Pasar Mañana Tour",
+        "description":  "El artista más escuchado del mundo llega a Colombia. Bad Bunny presenta su tour mundial con producción de nivel internacional.",
+        "date":  "2026-09-21T06:00:00.000Z",
+        "doorsOpenAt":  "2026-09-21T04:00:00.000Z",
+        "endDate":  "2026-09-21T09:30:00.000Z",
+        "venueId":  {
+                        "_id":  "6a051f28dc7506bff722e9cd",
+                        "name":  "Estadio El Campín",
+                        "address":  "Cra 30 # 57-60",
+                        "city":  "Bogotá",
+                        "country":  "Colombia",
+                        "sections":  [
+                                         {
+                                             "name":  "Palco Premium",
+                                             "capacity":  300,
+                                             "description":  "Zona exclusiva con mejor vista al escenario",
+                                             "color":  "#8B5CF6",
+                                             "_id":  "6a051f28dc7506bff722e9bf"
+                                         },
+                                         {
+                                             "name":  "VIP Floor",
+                                             "capacity":  1500,
+                                             "description":  "Zona VIP de pie frente al escenario",
+                                             "color":  "#3B82F6",
+                                             "_id":  "6a051f28dc7506bff722e9c0"
+                                         },
+                                         {
+                                             "name":  "General Piso",
+                                             "capacity":  8000,
+                                             "description":  "Zona general en el campo",
+                                             "color":  "#10B981",
+                                             "_id":  "6a051f28dc7506bff722e9c1"
+                                         },
+                                         {
+                                             "name":  "General Lateral",
+                                             "capacity":  6000,
+                                             "description":  "Tribunas laterales numeradas",
+                                             "color":  "#10B981",
+                                             "_id":  "6a051f28dc7506bff722e9c2"
+                                         }
+                                     ],
+                        "__v":  0
+                    },
+        "status":  "PUBLISHED",
+        "isFeatured":  true,
+        "genres":  [
+                       "Reggaeton",
+                       "Trap",
+                       "Latin Pop"
+                   ],
+        "viewerCount":  1247,
+        "createdAt":  "2026-05-13T22:48:50.074Z",
+        "updatedAt":  "2026-05-13T22:48:50.074Z",
+        "__v":  0,
+        "ticketTypes":  [
+                            {
+                                "_id":  "6a051f29dc7506bff722ea0d",
+                                "concertId":  "6a051f29dc7506bff722e9f7",
+                                "sectionId":  "6a051f28dc7506bff722e9c1",
+                                "name":  "General",
+                                "price":  350000,
+                                "totalQuantity":  600,
+                                "availableQuantity":  600,
+                                "maxPerOrder":  8,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "General Piso",
+                                                "capacity":  8000,
+                                                "description":  "Zona general en el campo",
+                                                "color":  "#10B981",
+                                                "_id":  "6a051f28dc7506bff722e9c1"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea0e",
+                                "concertId":  "6a051f29dc7506bff722e9f7",
+                                "sectionId":  "6a051f28dc7506bff722e9c0",
+                                "name":  "VIP Floor",
+                                "price":  650000,
+                                "totalQuantity":  200,
+                                "availableQuantity":  200,
+                                "maxPerOrder":  4,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "VIP Floor",
+                                                "capacity":  1500,
+                                                "description":  "Zona VIP de pie frente al escenario",
+                                                "color":  "#3B82F6",
+                                                "_id":  "6a051f28dc7506bff722e9c0"
+                                            }
+                            },
+                            {
+                                "_id":  "6a051f29dc7506bff722ea0f",
+                                "concertId":  "6a051f29dc7506bff722e9f7",
+                                "sectionId":  "6a051f28dc7506bff722e9bf",
+                                "name":  "Palco Premium",
+                                "price":  1200000,
+                                "totalQuantity":  50,
+                                "availableQuantity":  50,
+                                "maxPerOrder":  2,
+                                "__v":  0,
+                                "section":  {
+                                                "name":  "Palco Premium",
+                                                "capacity":  300,
+                                                "description":  "Zona exclusiva con mejor vista al escenario",
+                                                "color":  "#8B5CF6",
+                                                "_id":  "6a051f28dc7506bff722e9bf"
+                                            }
+                            }
+                        ],
+        "reviews":  [
+
+                    ]
+    }
+]
