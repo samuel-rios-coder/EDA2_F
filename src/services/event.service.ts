@@ -3,6 +3,7 @@ import { apiFetch } from './api.service';
 
 const FALLBACK_CONCERTS_URL = '/fallback/concerts.json';
 const VALID_STATUSES: ConcertStatus[] = ['DRAFT', 'PUBLISHED', 'LIVE', 'SOLD_OUT', 'CANCELLED', 'COMPLETED'];
+const FORCE_FALLBACK_HOSTS = new Set(['frontend-ed-2.vercel.app']);
 
 let fallbackConcertsCache: Concert[] | null = null;
 
@@ -113,6 +114,12 @@ const isRecoverableFailure = (error: unknown): boolean => {
   return /failed to fetch|networkerror|cors|application failed to respond|bad gateway|gateway/i.test(error.message);
 };
 
+const shouldForceFallbackCatalog = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  if (!import.meta.env.PROD) return false;
+  return FORCE_FALLBACK_HOSTS.has(window.location.hostname);
+};
+
 const applyFilters = (
   concerts: Concert[],
   params?: { city?: string; genre?: string; status?: string }
@@ -144,6 +151,11 @@ const loadFallbackConcerts = async (): Promise<Concert[]> => {
 };
 
 const getAll = async (params?: { city?: string; genre?: string; status?: string }): Promise<Concert[]> => {
+  if (shouldForceFallbackCatalog()) {
+    const fallback = await loadFallbackConcerts();
+    return applyFilters(fallback, params);
+  }
+
   const query = params ? '?' + new URLSearchParams(params as Record<string, string>).toString() : '';
 
   try {
@@ -167,6 +179,14 @@ const getFeatured = async (): Promise<Concert[]> => {
 const getById = async (id: string | number): Promise<Concert> => {
   const normalizedId = String(id);
 
+  if (shouldForceFallbackCatalog()) {
+    const fallback = await loadFallbackConcerts();
+    const found = fallback.find((concert) => String(concert.id) === normalizedId);
+
+    if (!found) throw new Error('Concierto no encontrado');
+    return found;
+  }
+
   try {
     const raw = await apiFetch<unknown>(`/concerts/${encodeURIComponent(normalizedId)}`);
     return normalizeConcert(raw);
@@ -183,6 +203,17 @@ const getById = async (id: string | number): Promise<Concert> => {
 
 const search = async (q: string): Promise<Concert[]> => {
   const query = q.trim();
+
+  if (shouldForceFallbackCatalog()) {
+    const fallback = await loadFallbackConcerts();
+    if (!query) return fallback;
+
+    const lower = query.toLowerCase();
+    return fallback.filter((concert) =>
+      concert.tourName.toLowerCase().includes(lower) ||
+      concert.artist.name.toLowerCase().includes(lower)
+    );
+  }
 
   try {
     const raw = await apiFetch<unknown[]>(`/concerts/search?q=${encodeURIComponent(query)}`);
@@ -204,6 +235,21 @@ const search = async (q: string): Promise<Concert[]> => {
 
 const getRelated = async (id: string | number): Promise<Concert[]> => {
   const normalizedId = String(id);
+
+  if (shouldForceFallbackCatalog()) {
+    const fallback = await loadFallbackConcerts();
+    const current = fallback.find((concert) => String(concert.id) === normalizedId);
+    if (!current) return [];
+
+    return fallback
+      .filter((concert) => String(concert.id) !== normalizedId)
+      .filter((concert) =>
+        concert.artist.id === current.artist.id ||
+        concert.venue.city === current.venue.city ||
+        concert.genres.some((genre) => current.genres.includes(genre))
+      )
+      .slice(0, 6);
+  }
 
   try {
     const raw = await apiFetch<unknown[]>(`/concerts/${encodeURIComponent(normalizedId)}/related`);

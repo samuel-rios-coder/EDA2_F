@@ -24,6 +24,7 @@ export interface AuthSession {
 
 const SESSION_KEY = 'concertix_auth_session';
 const LOCAL_USERS_KEY = 'concertix_local_auth_users';
+const FORCE_FALLBACK_HOSTS = new Set(['frontend-ed-2.vercel.app']);
 
 interface LocalAuthUserRecord extends AuthUser {
   password: string;
@@ -32,6 +33,12 @@ interface LocalAuthUserRecord extends AuthUser {
 const isNetworkFailure = (error: unknown): boolean => {
   if (!(error instanceof Error)) return false;
   return /failed to fetch|networkerror|load failed|fetch failed/i.test(error.message);
+};
+
+const shouldForceLocalAuthFallback = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  if (!import.meta.env.PROD) return false;
+  return FORCE_FALLBACK_HOSTS.has(window.location.hostname);
 };
 
 const readLocalUsers = (): LocalAuthUserRecord[] => {
@@ -134,6 +141,10 @@ const getUserFullName = (user: AuthUser): string =>
   `${user.firstName} ${user.lastName}`.trim();
 
 const login = async (payload: { email: string; password: string }): Promise<AuthSession> => {
+  if (shouldForceLocalAuthFallback()) {
+    return loginLocalFallback(payload);
+  }
+
   try {
     const res = await apiFetch<{ accessToken: string; refreshToken: string; user: AuthUser }>(
       '/auth/login',
@@ -152,6 +163,10 @@ const register = async (payload: {
   email: string;
   password: string;
 }): Promise<AuthSession> => {
+  if (shouldForceLocalAuthFallback()) {
+    return registerLocalFallback(payload);
+  }
+
   try {
     const res = await apiFetch<{ accessToken: string; refreshToken: string; user: AuthUser }>(
       '/auth/register',
